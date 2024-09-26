@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparación de Algoritmos DFS vs BFS</title>
+
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="text-align:center;">Comparación de Algoritmos DFS vs BFS en Laberintos</h1>
+
+    <table>
+        <tr>
+            <th>Laberinto</th>
+            <th>Algoritmo</th>
+            <th>Estados Explorados</th>
+            <th>Longitud del Camino</th>
+        </tr>
+        <tr>
+            <td rowspan="2">Laberinto 1 (maze1.txt)</td>
+            <td>DFS</td>
+            <td>15</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>BFS</td>
+            <td>9</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td rowspan="2">Laberinto 2 (maze2.txt)</td>
+            <td>DFS</td>
+            <td>20</td>
+            <td>12</td>
+        </tr>
+        <tr>
+            <td>BFS</td>
+            <td>13</td>
+            <td>10</td>
+        </tr>
+    </table>
+    <div style="text-align: center; margin-top: 20px;">
+        <h2>Imágenes de los laberintos</h2>
+        <div>
+            <h3>laberinto 1</h3>
+            <img src="imagen1.png" alt="Laberinto 1" style="width: 300px; height: auto; margin-right: 20px;">
+            <h3>laberinto 2</h3>
+            <img src="imagen2.png" alt="Laberinto 2" style="width: 300px; height: auto;">
+        </div>
+    </div>
+
+
+</body>
+</html>

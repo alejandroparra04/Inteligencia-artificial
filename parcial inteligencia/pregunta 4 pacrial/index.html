@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descripción del Código TensorFlow</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .code {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-left: 3px solid #ccc;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Descripción del Código TensorFlow</h1>
+
+    <div class="code">
+        <code>import tensorflow as tf</code><br>
+        <code>import numpy as np</code>
+        <p> En esta parte se importa la biblioteca de tensor flow y la de numpy, la cual la primera permite construir y entrenar redes neuronales y la otra sirve para trabajar con arrays.</p>
+    </div>
+
+
+    <div class="code">
+        <code>celsius = np.array([-40, -10, 0, 8, 15, 22, 38], dtype=float)</code><br>
+        <code>fahrenheit = np.array([-40, 14, 32, 46, 59, 72, 100], dtype=float)</code>
+        <p>Aquí se crea un array con los valores de temperatura en grados Celsius y Fahrenheit.</p>
+    </div>
+
+
+    <div class="code">
+        <code>oculta1 = tf.keras.layers.Dense(units=3, input_shape=[1])</code><br>
+        <code>oculta2 = tf.keras.layers.Dense(units=3)</code><br>
+        <code>salida = tf.keras.layers.Dense(units=1)</code><br>
+        <code>modelo = tf.keras.Sequential([oculta1, oculta2, salida])</code>
+        <p>La primera linea muestra que tiene 3 neuronas y espera una entrada con una sola y la segunda toma los resultados de la primera, la salida sirve para predecir un valor y el modelo es un modelo secuancial.</p>
+    </div>
+
+
+    <div class="code">
+        <code>modelo.compile(optimizer=tf.keras.optimizers.Adam(0.1), loss='mean_squared_error')</code>
+        <p>Aquí se configura el modelo Adam con una tasa de aprendizaje de 0.1.</p>
+    </div>
+
+    <div class="code">
+        <code>historial = modelo.fit(celsius, fahrenheit, epochs=1000, verbose=False)</code>
+        <p>Entrenamos el modelo usando los datos de Celsius y Fahrenheitel cual se ajustara al modelo durante 1000 épocas.</p>
+    </div>
+
+    <div class="code">
+        <code>import matplotlib.pyplot as plt</code><br>
+        <code>plt.plot(historial.history["loss"])</code>
+        <p>se importa el Matplotlib, y se genera un grafico para visualizar la evolucion.</p>
+    </div>
+
+
+
+    <div class="code">
+        <code>resultado = modelo.predict([100.0])</code>
+        <p>se hace una predicción: aquí le pedimos al modelo que nos diga cuántos grados Fahrenheit corresponden a 100 grados Celsius.</p>
+    </div>
+
+    <div class="code">
+        <code>print(oculta1.get_weights())</code>
+        <p>se imprimen los pesos internos de la primera capa para ver cómo el modelo ajustó a los valores durante el entrenamiento.</p>
+    </div>
+
+    <div class="code">
+        <code>print(oculta2.get_weights())</code>
+        <p>Lo mismo, pero para la segunda capa oculta.</p>
+    </div>
+
+    <div class="code">
+        <code>print(salida.get_weights())</code>
+        <p>Finalmente se imprimen los pesos de la salida, que es la que produce la predicción final.</p>
+    </div>
+
+</body>
+</html>
